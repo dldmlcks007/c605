@@ -2,14 +2,25 @@
 //
 
 #include <iostream>
-
+using namespace std;
 int main()
 {
-    std::cout << "Hello World!\n";
-    std::cout << "Hello World2!\n";
-    std::cout << "Hello World3!\n";
-    std::cout << "Hello World4!\n";
-    std::cout << "Hello World5!\n";
+    int arr[7] = { 1, 4, 3, 3, 5, 7, 6 };
+    int* front = &arr[0];
+    int* back = &arr[6];
+    
+    for (int i = 0;i < 3;i++)
+    {
+       int temp= *(front + i);
+        *(front + i) = *(back - i);
+        *(back - i) = temp;
+    }
+    
+    
+    for (int i = 0; i < 7; i++)
+    {
+        cout << arr[i] << " ";
+    }
 }
 
 // 프로그램 실행: <Ctrl+F5> 또는 [디버그] > [디버깅하지 않고 시작] 메뉴
